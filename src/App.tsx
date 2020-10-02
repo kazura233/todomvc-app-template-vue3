@@ -18,15 +18,15 @@ export default defineComponent({
 
     return () => {
       const slots = {
-          default: (item: Item, index: number) => (
-            <TodoItem
-              id={item.id}
-              value={item.value}
-              checked={item.checked}
-              index={index}
-              key={item.id}
-            ></TodoItem>
-          ),
+        default: (item: Item, index: number) => (
+          <TodoItem
+            id={item.id}
+            value={item.value}
+            checked={item.checked}
+            index={index}
+            key={item.id}
+          ></TodoItem>
+        ),
       }
 
       return (
