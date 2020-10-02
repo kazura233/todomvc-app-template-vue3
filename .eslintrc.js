@@ -22,5 +22,12 @@ module.exports = {
     'no-unused-vars': 'warn',
     'no-irregular-whitespace': 'warn',
     'no-async-promise-executor': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/camelcase': 'off',
+    '@typescript-eslint/class-name-casing': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-inferrable-types': 'off',
   },
 }
