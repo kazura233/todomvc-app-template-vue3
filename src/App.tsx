@@ -17,8 +17,7 @@ export default defineComponent({
     })
 
     return () => {
-      const options = {
-        scopedSlots: {
+      const slots = {
           default: (item: Item, index: number) => (
             <TodoItem
               id={item.id}
@@ -28,14 +27,13 @@ export default defineComponent({
               key={item.id}
             ></TodoItem>
           ),
-        },
       }
 
       return (
         <div>
           <section class="todoapp">
             <TodoHeader></TodoHeader>
-            <TodoList dataSource={state.dataSource} {...options}></TodoList>
+            <TodoList dataSource={state.dataSource} v-slots={slots}></TodoList>
             <TodoFooter></TodoFooter>
           </section>
           <footer class="info">
