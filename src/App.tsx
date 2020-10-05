@@ -16,40 +16,33 @@ export default defineComponent({
       ],
     })
 
-    return () => {
-      const slots = {
-        default: (item: Item, index: number) => (
-          <TodoItem
-            id={item.id}
-            value={item.value}
-            checked={item.checked}
-            index={index}
-            key={item.id}
-          ></TodoItem>
-        ),
-      }
-
-      return (
-        <div>
-          <section class="todoapp">
-            <TodoHeader></TodoHeader>
-            <TodoList dataSource={state.dataSource} v-slots={slots}></TodoList>
-            <TodoFooter></TodoFooter>
-          </section>
-          <footer class="info">
-            <p>Double-click to edit a todo</p>
-            <p>
-              Template by <a href="http://sindresorhus.com">Sindre Sorhus</a>
-            </p>
-            <p>
-              Created by <a href="http://todomvc.com">you</a>
-            </p>
-            <p>
-              Part of <a href="http://todomvc.com">TodoMVC</a>
-            </p>
-          </footer>
-        </div>
-      )
-    }
+    return () => (
+      <div>
+        <section class="todoapp">
+          <TodoHeader></TodoHeader>
+          <TodoList
+            dataSource={state.dataSource}
+            v-slots={{
+              default: (item: Item) => (
+                <TodoItem id={item.id} value={item.value} checked={item.checked} key={item.id} />
+              ),
+            }}
+          ></TodoList>
+          <TodoFooter></TodoFooter>
+        </section>
+        <footer class="info">
+          <p>Double-click to edit a todo</p>
+          <p>
+            Template by <a href="http://sindresorhus.com">Sindre Sorhus</a>
+          </p>
+          <p>
+            Created by <a href="http://todomvc.com">you</a>
+          </p>
+          <p>
+            Part of <a href="http://todomvc.com">TodoMVC</a>
+          </p>
+        </footer>
+      </div>
+    )
   },
 })

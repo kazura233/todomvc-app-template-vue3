@@ -21,10 +21,6 @@ export default defineComponent({
       type: Boolean,
       required: true,
     },
-    index: {
-      type: Number,
-      required: true,
-    },
   },
   setup(props) {
     return () => (
